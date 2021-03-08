@@ -2,8 +2,9 @@ let miTexto = "Hola mundo cruel"
 
 const contarCaracteres = (text) => {
   try {
-    if (typeof text != 'string') return `Ingresa un texto`
-  return text.length
+    return (typeof text != 'string') 
+      ?text = `Ingresa un texto` 
+      :text = text.length
   } catch (error) {
     return error
   }
@@ -11,9 +12,10 @@ const contarCaracteres = (text) => {
 
 const recortarTexto =(text, limite) => {
   try {
-    if(typeof text != 'string') return `Ingresa un texto`
-    if(typeof limite != 'number') return `Ingresa un numero `
-  return text.substring(0,limite)
+    return (typeof text != 'string') 
+      ?`Ingresa un texto`
+      :(typeof limite != 'number') ?`Ingresa un numero`
+      :text.substring(0,limite)
   } catch (error) {
     return error
   }
@@ -22,23 +24,22 @@ const recortarTexto =(text, limite) => {
 
 const separarTexto = (text, separador) =>{
   try {
-    if (typeof text != 'string') return `Ingresa un texto`
-    if (typeof separador != 'string') return `Ingresa un separador en texto`
-    return text.split(separador)
+    return (typeof text != 'string') 
+      ?`Ingresa un texto`
+      :(typeof separador != 'string') ?`Ingresa un separador en texto`
+      :text.split(separador)
   } catch (error) {
     return error
   }
 }
 
 const repetirTexto = (text, repeticiones) => {
+  text = text + " "
   try {
-    if (typeof text != 'string') return `Ingresa un texto`
-    if (typeof repeticiones != 'number') return `Ingresa un numero`
-    let miTextoAux = text
-    for (let i=0; i<repeticiones-1; i++){
-      text += " " + miTextoAux
-    }
-    return text
+    return (typeof text != 'string')
+      ?`Ingresa un texto`
+      :(typeof repeticiones != 'number') ?`Ingresa un numero`
+      :text.repeat(repeticiones)
   } catch (error) {
     return error
   }
